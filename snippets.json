@@ -6,7 +6,7 @@
 	},
 	"Nest MongoDB Model": {
 		"prefix": "nestschema",
-		"body": "import { Prop, Schema, SchemaFactoryx} from '@nestjs/mongoose';\nimport { Document } from 'mongoose';\n\nexport type ${1:param}Document = ${1:param} & Document;\n@Schema({\n \t// timestamp: true\n})\nexport class ${1:param} {\n\t@Prop()\n\tpropName: string;\n\n\t// More props here\n}\n\nexport const ${1:param}Schema = SchemaFactory.createForClass(${1:param});\n",
+		"body": "import { Prop, Schema, SchemaFactoryx} from '@nestjs/mongoose';\nimport { Document } from 'mongoose';\n\nexport type ${1:MySchema}Document = ${1:MySchema} & Document;\n@Schema({\n \t// timestamp: true\n})\nexport class ${1:MySchema} {\n\t@Prop()\n\tpropName: string;\n\n\t// More props here\n}\n\nexport const ${1:MySchema}Schema = SchemaFactory.createForClass(${1:MySchema});\n",
 		"description": "Create new mongodb shcema for NestJS"
 	},
 	"Nest Guard": {
@@ -53,4 +53,5 @@
 		"prefix": "nestput",		
 		"body": "@Put()\nasync ${0:name}(@Body() body: any, @Req() req: any, @Res() res: Response){\n\t// Put your magic here\n}",
 		"description": "Create Get Method"
-	},
+	}
+}

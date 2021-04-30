@@ -3,7 +3,7 @@
 	"displayName": "NestJS Snippets",
 	"description": "NestJS Snippets",
   "repository": "https://github.com/manudevcode/nestjs-snippets",
-	"version": "0.0.1",
+	"version": "0.0.2",
   "publisher": "ManuCodes",
   "icon": "images/icon.png",
 	"galleryBanner": {
