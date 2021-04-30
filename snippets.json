@@ -1,0 +1,56 @@
+{	
+	"Nest Cron": {
+		"prefix": "nestcron",
+		"body": "import { Injectable, Logger } from '@nestjs/common';\nimport { Cron } from '@nestjs/schedule';\n\n@Injectable()\nexport class ${1:Name}Service {\n\tprivate readonly logger = new Logger(${1:Name}Service.name);\n\n\t@Cron('45 * * * * *')\n\thandleCron() {\n\t\tconsole.log('Called when the current second is 45');\n\t}\n}",
+		"description": "Create new task class with cron method for NestJS"
+	},
+	"Nest MongoDB Model": {
+		"prefix": "nestschema",
+		"body": "import { Prop, Schema, SchemaFactoryx} from '@nestjs/mongoose';\nimport { Document } from 'mongoose';\n\nexport type ${1:param}Document = ${1:param} & Document;\n@Schema({\n \t// timestamp: true\n})\nexport class ${1:param} {\n\t@Prop()\n\tpropName: string;\n\n\t// More props here\n}\n\nexport const ${1:param}Schema = SchemaFactory.createForClass(${1:param});\n",
+		"description": "Create new mongodb shcema for NestJS"
+	},
+	"Nest Guard": {
+		"prefix": "nestguard",
+		"body": "import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common';\n\n@Injectable()\nexport class ${1:Name}Guard implements CanActivate {\n\tcanActivate(\n\t\tcontext: ExecutionContext,\n\t): boolean | Promise<boolean> {\n\t\tconst request = context.switchToHttp().getRequest();\n\t\treturn validateRequest(request);\n\t}\n}\n\nvalidateRequest() {\n\t//Do your validation here\n}",
+		"description": "Create Nest simple Guard"
+	},
+	"Nest Middlewate": {
+		"prefix": "nestmid",
+		"body": "import { Injectable, NestMiddleware } from '@nestjs/common';\nimport { Request, Response, NextFunction } from 'express';\n\n@Injectable()\nexport class ${0:Name}Middleware implements NestMiddleware {\n\tuse(req: Request, res: Response, next: NextFunction) {\n\t\tconsole.log('Request...');\n\t\tnext();\n\t}\n}",
+		"description": "Create Nest simple Middleware"
+	},
+	"Nest Controller": {
+		"prefix": "nestcon",
+		"body": "import { Controller } from '@nestjs/common';\n\n@Controller('${1:param}')\nexport class ${0:param}Controller {\n constructor() {}\n}",
+		"description": "Create new Nest Controller"
+	},
+	"Nest CRUD": {
+		"prefix": "nestcrud",
+		"body": "import { Controller, Get, Post, Put, Delete } from '@nestjs/common';\n\n@Controller('${1:url}')\nexport class ${0:Name}Controller { \n\t@Post()\n\tcreate(){}\n\n\t@Get()\n\tfindAll(){}\n\n\t@Put('/:id')\n\tupdate(){}\n\n\t@Delete('/:id')\n\tdelete(){}\n}",
+		"description": "Create new Nest Controller with Get, Post, Put and Delete methods"
+	},
+	"Nest DELETE": {
+		"prefix": "nestdel",		
+		"body": "@Delete('/:${1:param}')\nasync ${0:name}(@Param('${1:param}') ${1:param}: any, @Req() req: any, @Res() res: Response){\n\t// Put your magic here\n}",
+		"description": "Create Get Method"
+	},
+	"Nest GET": {
+		"prefix": "nestget",		
+		"body": "@Get('${1:url}')\nasync ${0:name}(@Req() req: any, @Res() res: Response){\n\t// Put your magic here\n}",
+		"description": "Create Get Method"
+	},
+	"Nest GET with URL param": {
+		"prefix": "nestgetparam",		
+		"body": "@Get('/:${1:param}')\nasync ${0:name}(@Param('${1:param}') ${1:param}: any, @Req() req: any, @Res() res: Response){\n\t// Put your magic here\n}",
+		"description": "Create Get Method"
+	},
+	"Nest POST": {
+		"prefix": "nestpost",		
+		"body": "@Post()\nasync ${0:name}(@Body() body: any, @Req() req: any, @Res() res: Response){\n\t// Put your magic here\n}",
+		"description": "Create Get Method"
+	},
+	"Nest PUT": {
+		"prefix": "nestput",		
+		"body": "@Put()\nasync ${0:name}(@Body() body: any, @Req() req: any, @Res() res: Response){\n\t// Put your magic here\n}",
+		"description": "Create Get Method"
+	},

@@ -1,0 +1,27 @@
+{
+	"name": "nestjs-snippets",
+	"displayName": "NestJS Snippets",
+	"description": "NestJS Snippets",
+  "repository": "https://github.com/manudevcode/nestjs-snippets",
+	"version": "0.0.1",
+  "publisher": "ManuCodes",
+  "icon": "images/icon.png",
+	"galleryBanner": {
+		"color": "#0c0a20",
+		"theme": "dark"
+	},
+	"engines": {
+		"vscode": "^1.55.2"
+	},
+	"categories": [
+		"Snippets"
+	],
+	"contributes": {
+		"snippets": [
+			{
+				"language": "javascript",
+				"path": "./snippets.json"
+			}
+		]
+	}
+}
