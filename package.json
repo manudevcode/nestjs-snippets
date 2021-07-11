@@ -1,27 +1,65 @@
 {
-	"name": "nestjs-snippets",
-	"displayName": "NestJS Snippets",
-	"description": "NestJS Snippets",
-  "repository": "https://github.com/manudevcode/nestjs-snippets",
-	"version": "0.0.2",
+  "name": "nestjs-snippets",
+  "displayName": "NestJS Snippets",
+  "description": "Simple extension for NestJS",
+  "version": "0.0.3",
   "publisher": "ManuCodes",
-  "icon": "images/icon.png",
-	"galleryBanner": {
-		"color": "#0c0a20",
-		"theme": "dark"
-	},
-	"engines": {
-		"vscode": "^1.55.2"
-	},
-	"categories": [
-		"Snippets"
-	],
-	"contributes": {
-		"snippets": [
-			{
-				"language": "javascript",
-				"path": "./snippets.json"
-			}
-		]
-	}
+  "icon": "images/logo.png",
+  "keywords": [
+    "snippets",
+    "nodejs",
+    "nestjs",
+    "nest",
+    "typescript"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/manudevcode/nestjs-snippets"
+  },
+  "engines": {
+    "vscode": "^1.55.2"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "extensionKind": [
+    "ui",
+    "workspace"
+  ],
+  "main": "./dist/index.js",
+  "activationEvents": [
+    "onCommand:extension.snippetSearch"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.snippetSearch",
+        "title": "ES7 snippet search"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "extension.snippetSearch",
+        "key": "ctrl+alt+r",
+        "mac": "shift+cmd+r",
+        "when": "editorTextFocus"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "typescript",
+        "path": "./snippet/snippets.json"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.14",
+    "@types/vscode": "^1.45.0",
+    "typescript": "3.9.6"
+  }
 }
