@@ -6,7 +6,7 @@
 	},
 	"Nest MongoDB Model": {
 		"prefix": "nestschema",
-		"body": "import { Prop, Schema, SchemaFactoryx} from '@nestjs/mongoose';\nimport { Document } from 'mongoose';\n\nexport type ${1:MySchema}Document = ${1:MySchema} & Document;\n@Schema({\n \t// timestamp: true\n})\nexport class ${1:MySchema} {\n\t@Prop()\n\tpropName: string;\n\n\t// More props here\n}\n\nexport const ${1:MySchema}Schema = SchemaFactory.createForClass(${1:MySchema});\n",
+		"body": "import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';\nimport { Document } from 'mongoose';\n\nexport type ${1:MySchema}Document = ${1:MySchema} & Document;\n@Schema({\n \t// timestamp: true\n})\nexport class ${1:MySchema} {\n\t@Prop()\n\tpropName: string;\n\n\t// More props here\n}\n\nexport const ${1:MySchema}Schema = SchemaFactory.createForClass(${1:MySchema});\n",
 		"description": "Create new mongodb shcema for NestJS"
 	},
 	"Nest Guard": {
