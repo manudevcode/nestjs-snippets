@@ -1,4 +1,4 @@
-{	
+{
 	"Nest Cron": {
 		"prefix": "nestcron",
 		"body": "import { Injectable, Logger } from '@nestjs/common';\nimport { Cron } from '@nestjs/schedule';\n\n@Injectable()\nexport class ${1:Name}Service {\n\tprivate readonly logger = new Logger(${1:Name}Service.name);\n\n\t@Cron('45 * * * * *')\n\thandleCron() {\n\t\tconsole.log('Called when the current second is 45');\n\t}\n}",
@@ -32,7 +32,7 @@
 	"Nest DELETE": {
 		"prefix": "nestdel",		
 		"body": "@Delete('/:${1:param}')\nasync ${0:name}(@Param('${1:param}') ${1:param}: any, @Req() req: any, @Res() res: Response){\n\t// Put your magic here\n}",
-		"description": "Create Get Method"
+		"description": "Create delete Method"
 	},
 	"Nest GET": {
 		"prefix": "nestget",		
@@ -42,16 +42,26 @@
 	"Nest GET with URL param": {
 		"prefix": "nestgetparam",		
 		"body": "@Get('/:${1:param}')\nasync ${0:name}(@Param('${1:param}') ${1:param}: any, @Req() req: any, @Res() res: Response){\n\t// Put your magic here\n}",
-		"description": "Create Get Method"
+		"description": "Create get Method with url param"
 	},
 	"Nest POST": {
-		"prefix": "nestpost",		
-		"body": "@Post()\nasync ${0:name}(@Body() body: any, @Req() req: any, @Res() res: Response){\n\t// Put your magic here\n}",
-		"description": "Create Get Method"
+		"prefix": "nestpost",
+		"body": "@Post('/')\nasync ${0:name}(@Body() body: any, @Req() req: any, @Res() res: Response){\n\t// Put your magic here\n}",
+		"description": "Create post Method"
+	},
+	"Nest POST with URL param": {
+		"prefix": "nestpostparam",
+		"body": "@Post('/:${1:param}')\nasync ${0:name}(@Param('${1:param}') ${1:param}: any, @Body() body: any, @Req() req: any, @Res() res: Response){\n\t// Put your magic here\n}",
+		"description": "Create post method with url param"
 	},
 	"Nest PUT": {
-		"prefix": "nestput",		
+		"prefix": "nestput",
 		"body": "@Put()\nasync ${0:name}(@Body() body: any, @Req() req: any, @Res() res: Response){\n\t// Put your magic here\n}",
-		"description": "Create Get Method"
+		"description": "Create put method"
+	},
+	"Nest PUT with URL param": {
+		"prefix": "nestput",
+		"body": "@Put('/:${1:param}')\nasync ${0:name}(@Param('${1:param}') ${1:param}: any, @Body() body: any, @Req() req: any, @Res() res: Response){\n\t// Put your magic here\n}",
+		"description": "Create put method with url param"
 	}
 }
